@@ -1,0 +1,321 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[top=3cm, bottom=3cm, left=2cm, right=2.5cm]{geometry}
+\usepackage{graphicx}
+%\usepackage{tabularx}
+\usepackage{tabularray}
+\UseTblrLibrary{booktabs}
+\usepackage{amsfonts}
+\graphicspath{ {./Picture/} }
+\renewcommand*\contentsname{Contents}
+\usepackage[english]{babel}
+\usepackage[range-phrase={\,til\,}]{siunitx}
+%\usepackage{siunitx}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{wrapfig}
+\renewcommand{\figurename}{Figure}
+\usepackage[rightcaption]{sidecap}
+\usepackage{amsmath}
+\usepackage{mathpazo}
+\usepackage{mathtools}
+\linespread{1.3}
+\usepackage{sidecap}
+\usepackage[hidelinks]{hyperref}
+\usepackage{graphicx}
+\usepackage{caption}				% Customisable captions in floating environments (figs/tables)
+\usepackage{subcaption}				% for subfigures
+\usepackage{float}					% Imploved float options
+\usepackage{parskip}
+\usepackage{booktabs}
+\usepackage{textcomp}
+\usepackage{booktabs}
+\usepackage{csquotes}
+\usepackage[backend=biber, style=apa, sorting=nty]{biblatex}
+\addbibresource{references.bib} % Your external .bib file
+\usepackage[nodayofweek]{datetime}
+\usepackage{nth}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[european,
+	nooldvoltagedirection]
+	{circuitikz}					% Create circuit graphics (using TikZ)
+\def\doubleunderline#1{\underline{\underline{#1}}}
+\shortdate
+\setcounter{tocdepth}{2}
+\sidecaptionvpos{figure}{c}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Group 7}
+\fancyhead[R]{\today}
+\fancyhead[C]{Problem Domain}
+\fancyfoot[L]{\nth{1} Semester}
+%\lhead{Gruppe 13}
+%\rhead{\today}
+%\lfoot{30020 Elektronisk måling og instrumentering}
+
+\begin{document}
+\begin{titlepage}
+    \begin{center}
+        \vspace*{0cm}
+        
+        \hrule
+        \vspace{.5cm}
+        { \Huge \bfseries Problem Domain \\ \large  Domain creation\\
+        \vspace{.5cm} 
+        \hrule
+        }
+        
+        \vspace{1cm}
+        Aniara Lyn Inso Lauron: 371989 \\
+        Mokhtar Buyema: 370687\\
+        Mykyta Lykholobov: 372837\\
+        Oleksandr Zavhorodnii: 370951\\
+        Sarika Jaman Sonom: 373435
+        
+        \vspace{1cm}
+ 
+
+            \centering
+            \includegraphics[width=0.9\linewidth]{social.png}
+    
+                
+        \vspace{1cm}
+        
+        \Large Software Engineering, \nth{1} Semester\\
+        \large Via University College\\ Horsens, Denmark\\
+        
+        \vspace{1cm}
+        
+        \Large \today
+ 
+    \end{center}
+\end{titlepage}
+\newpage
+\pagenumbering{roman}
+\tableofcontents
+
+
+
+\newpage
+\pagenumbering{arabic}
+\rfoot{Side \thepage \hspace{1pt} af \pageref{LastPage}}
+\section*{Problem domain}
+\phantomsection
+\addcontentsline{toc}{section}{Problem Domain}%
+
+
+The digital gaming industry has evolved rapidly with digital distribution becoming an important way for players to acquire and maintain their game collections. (See \cite{desciption}). As players accumulate games over time, keeping track of their collections can become increasingly challenging. Games may differ in genre, playtime, completion status, and personal preference, creating a need for effective ways to organize and retrieve relevant information.
+
+Gamers may manage their collections manually through notes, spreadsheets, platform libraries, or their own memory. As collections grow, these approaches can make it difficult to obtain an overview of owned games, locate specific titles, compare games based on relevant criteria, and keep personal records up to date. Players may also want to identify their favorite games, track their playtime, monitor completion progress, or review statistics about their gaming habits.
+
+These challenges highlight the need for a system that allows users to maintain and organize information about their personal PC game collections in one place. Such a system could enable users to add, update, and remove game records, search for specific titles, filter, and sort games according to selected criteria, and access relevant information about their collections such as the completion status of the game. By supporting these activities, the system aims to make the management of personal games more structured and convenient for individual users. 
+
+\begin{enumerate}
+
+\item \textbf{Search and Retrieval Difficulties:}
+
+As personal game collections grow, users may find it increasingly difficult to locate specific titles and identify games that match their preferences. Without suitable search, filtering, and sorting functionality, users may need to browse their collections manually. A game collection management system can address this challenge by allowing users to search for games and organize their collections according to relevant criteria, such as title, genre, favorite status, and completion status.
+
+\item \textbf{Maintaining Game Information:}
+
+Users need a structured way to maintain information about the games in their personal collections. Without a suitable management functionality, games records may become incomplete or outdated. The game collection management system aims to address this challenge by allowing users to add, update, and remove game records, helping them maintain organized and consistent information about their collections.
+
+
+\item \textbf{Organizing Favorites and Game Progress: }
+
+Users may want to identify their favorite games, keep track of completed titles, and distinguish games that are in progress from those they have not started. Without appropriate organizational features, users may need to search through collections manually to find preferred games or review their progress. The single user management system aims to address this challenge by allowing users to mark favorite games and records their completion status. The system can also provide statistics about the collection, such as the total number of games and the number of completed games. 
+
+
+\section{Target Audience:}
+
+The target audience consists of individual PC gamers who want to maintain, organize, search, filter and retrieve information about their personal game collections through a single user system. The single user management system aims to make managing a personal game collection more convenient by allowing users to keep their game information organized in one place, reducing the need to rely on physical collections. 
+\end{enumerate}
+
+\newpage
+\subsection*{Problem Statement}
+\phantomsection
+\addcontentsline{toc}{section}{Problem Statement}%
+
+\section{Main Problem}
+
+How can a single-user system support the effective management, organization, filtering, and retrieval of a personal PC game collection? (See \cite{otherbook}) 
+
+
+    \subsection{Game Data and Requirements:}
+    
+       What information should be stored for each game to help users manage their personal game, collections effectively, and which attributes would be useful to the users?
+    
+    \subsection{Filtering Logic and Search Functionality: }
+     
+  
+   What search criteria and filtering options are relevant to help users efficiently find and compare games within their personal collection?  
+    
+    \subsectionf{User Interface and Collection Management:}
+
+    What functionalities and system interface features are necessary for users to add, update, remove, organize, and access games within their personal collections?
+  
+    
+   \subsection{Data accuracy and System consistency}
+
+    What data validation, error-handling, and usability requirements should the system satisfy to ensure that users can manage their game collections reliably and navigate its feature effectively?
+    
+    \subsection {System evaluation}
+
+     In what ways will the system be evaluated to determine whether it effectively supports users in managing, organizing, sorting, and retrieving information within their personal game collections?
+    
+
+
+    
+   
+
+    
+    
+
+
+\newpage
+\subsection*{Delimation}
+\phantomsection
+\addcontentsline{toc}{section}{Delimation}%
+
+The problem domain includes many potential areas, but this project will focus on a limited subset\cite{project} : 
+
+\textbf{INCLUDED}
+\begin{itemize}
+    \item Manual registration of games 
+    \item Basic game information (name, genre, launcher, mode, link, play time, favorite) 
+    \item Understanding user challenges related to finding, accessing, and organizing games
+    \item Play‑time awareness
+    \item Filtering and categorization  
+\end{itemize}
+\textbf{Excluded}
+\begin{itemize}
+    \item Automatic detection of installed games
+    \item Integration with external launchers (Steam API, Epic API, etc.)
+    \item Social features such as sharing game lists
+    \item Cloud synchronization
+    \item Development of mobile apps
+    \item Tracking achievements or in‑game statistics
+\end{itemize}
+
+
+\newpage
+\subsection*{Choice  of  Methods}
+\phantomsection
+\addcontentsline{toc}{section}{Choice  of  Methods}%
+
+The single-user PC game collection management system will primarily follow the Waterfall methodology, which organizes software development into sequential phases: analysis, design, implementation, and testing. Although these phases will provide the overall structure of the project, the methodology will not be applied strictly, allowing adjustments when necessary  \cite{oracle}
+
+\textbf{Problem-domain analysis }
+
+The problem domain will be analyzed to identify the relevant users, activities, challenges, and needs associated with managing personal PC game collections. A Rich Picture will be used to illustrate the problem domain and its actors.
+
+\textbf{Requirements analysis}
+
+The identified user needs will be translated into functional requirements for managing game collections. These will include adding, editing, removing, searching, filtering, sorting, marking games as favorites, and recording game completion status. The requirements will guide the subsequent design and implementation phases.
+
+\textbf{Object-Oriented Design}
+
+UML class diagrams will be used to identify the application's classes, attributes, and relationships. The diagrams will provide a structural model to guide the Java implementation.
+
+\textbf{Implementation}
+
+The application will be developed in Java using an object-oriented approach. The planned functionality will be implemented according to the requirements and design, with adjustments made when necessary.
+
+\textbf{Testing}
+
+Functional testing will be conducted to verify that the implemented features meet the specified requirements. Test cases will cover game management, searching, filtering, sorting, favorite status, and completion status. Errors identified during testing will be addressed where necessary.
+
+
+\newpage
+\subsection*{Time Schedule}
+\phantomsection
+\addcontentsline{toc}{section}{Time Schedule}%
+
+\textbf{Milestones }
+\begin{itemize}
+    \item Week 43: Analysis
+    \item Week 44: Analysis feedback
+    \item Week 45: Analysis continuation
+    \item Week 46: Final analysis feedback 
+    \item Week 47: Design
+    \item Week 48: Design feedback 
+    \item Following weeks: Implementation and Testing 
+\end{itemize}
+
+\textbf{Workload}
+Total workload: Group size × 27.5 hours × 10 ECTS 
+
+
+
+\newpage
+\subsection*{Risk Assessment}
+\phantomsection
+\addcontentsline{toc}{section}{Risk Assessment }%
+
+Several risk may affect development of the single user-PC game collection management system. These risks relate to gathering relevant user requirements, managing game information, implementing system functionality, and evaluating the final application. \cite{project}.
+
+\begin{table}[ht!]
+    \centering
+    \caption{Risk Assessment}
+    \label{tab:risk-assessment}
+    \small
+
+    \begin{tblr}{
+        width = \textwidth,
+        colspec = {
+            X[1.2,l]
+            c c c
+            X[2,l]
+            X[1.6,l]
+            X[0.8,l]
+        },
+        row{1} = {font=\bfseries, valign=m},
+        rows = {valign=t},
+        rowsep = 5pt,
+        colsep = 4pt,
+    }
+        \toprule
+        Risk & Likelihood & Severity & Score &
+        Mitigation & Indicators & Responsible \\
+        \midrule
+
+        Insufficient user requirements
+        & 4 & 4 & 16
+        & Prevention: identifying the target users' needs, define clear functional requirements, and review them before implementation.
+        & Unclear requirements or missing game management functionality.
+        & Mokhtar \\
+
+        Incorrect Collection Statistics
+        & 4 & 3 & 12
+        & Test Statistical calculations against game collections with known values and verify results after games are added, updated, or removed. 
+        & Statistics do not match the actual game records.
+        & Mykyta \\
+
+        Limited Time for Implementation and Testing
+        & 3 & 4 & 12
+        & Use a group contract, assign clear responsibilities, prioritize essential features, and hold weekly meetings.
+        & Missed internal deadlines or insufficient time for testing.
+
+        Lost work or conflicting versions of code and documents
+        & 2 & 5 & 10
+        & Use Git from the beginning, commit, changes regularly, and maintain shared project documents in an agreed location.
+        & Failed merges, conflicting versions, or missing changes
+        & Oleksandr \\
+
+        Major changes required after supervisor feedback
+        & 3 & 2 & 6
+        & Allow buffer time after feedback sessions and redistribute tasks when necesary.
+        & Feedback requires substantial revisions to the requirements, analysis, or design.
+        & Aniara \\
+
+        \bottomrule
+    \end{tblr}
+\end{table}
+
+\newpage
+\phantomsection
+\addcontentsline{toc}{section}{References}
+\printbibliography[title={References}]
+
+\end{document}
